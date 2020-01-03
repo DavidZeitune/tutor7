@@ -84,15 +84,31 @@ class FormBuilderView extends TPage
         $this->form->addFields( [new TLabel('Description')], [$text] );
         $text->setSize('100%', 50);
         
+        $dropdown = new TDropDown('Dropdown test', 'fa:list');
+        //$dropdown->setButtonClass('btn btn-info waves-effect dropdown-toggle');
+        $dropdown->addAction( 'Customer list', new TAction(array('CustomerDataGridView', 'onReload') ));
+        
+        $button = new TButton('update_collection');
+        $button->setAction(new TAction(array($this, 'onSend')), 'Save');
+        $button->setImage('fa:save green');
+        $this->form->addField($button);
+        
         // define the form action 
-        $this->form->addAction('Send', new TAction(array($this, 'onSend')), 'far:check-circle green');
-        $this->form->addHeaderAction('Send', new TAction(array($this, 'onSend')), 'fa:rocket orange');
+        $hbox = new THBox;
+        $hbox->add($dropdown);
+        $hbox->add($button);
+        
+        $panel = new TPanelGroup();
+        $panel->add($this->form);
+        $panel->addFooter($hbox);
+        
+        
         
         // wrap the page content using vertical box
         $vbox = new TVBox;
         $vbox->style = 'width: 100%';
         $vbox->add(new TXMLBreadCrumb('menu.xml', __CLASS__));
-        $vbox->add($this->form);
+        $vbox->add($panel);
 
         parent::add($vbox);
     }

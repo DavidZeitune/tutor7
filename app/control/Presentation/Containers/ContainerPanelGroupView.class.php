@@ -29,8 +29,8 @@ class ContainerPanelGroupView extends TPage
         $table->addRowSet('a1','a2');
         $table->addRowSet('b1','b2');
         $panel->add($table);
+              
         
-        $panel->addFooter('Panel group footer');
         
         // wrap the page content using vertical box
         $vbox = new TVBox;
@@ -40,4 +40,8 @@ class ContainerPanelGroupView extends TPage
         
         parent::add($vbox);
     }
+    
+    function onSend(){}
+    
+    
 }
