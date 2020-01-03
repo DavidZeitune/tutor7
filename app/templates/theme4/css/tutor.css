@@ -1,0 +1,40 @@
+.main-footer {
+    background:gray;
+    padding:8px;
+    min-height:57px;
+    z-index: 1000;
+    position: fixed;
+    width: calc(100% - 324px);
+    bottom: 0;
+    display: block;
+}
+
+.main-footer div > a > div {
+    text-align:center;
+    background:#b3b3b3;
+    padding: 4px;
+    height: 40px;
+    border: 2px solid gray;
+}
+
+.main-footer div > a > div > span {
+    font-size: 17px;
+    color: #ffffff;
+    vertical-align:middle;
+}
+
+@media (max-width: 1169px) {
+    .main-footer div {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 700px) {
+    .main-footer div > a > div > span {
+        font-size: 12px;
+    }
+    
+    .main-footer div > a > div {
+        line-height: 0;
+    }
+}

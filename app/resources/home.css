@@ -1,0 +1,52 @@
+.topic
+{
+    font-family: "Open Sans";
+    font-size: 12pt;
+    width: 100%;
+    padding: 8px;
+}
+
+.multicolumn
+{
+    width: 100%;
+}
+
+.multicolumn .home-card {
+    font-family: "Open Sans";
+    font-size: 10pt;
+    color: #3F3F3F;
+    float: left;
+    line-height:1.5em;
+    width: calc(50% - 10px);
+    min-height: 64px;
+    border: 1px solid gray;
+    padding: 17px;
+    border-radius: 3px;
+    margin: 5px;
+    text-decoration: none;
+    display: flex;
+}
+
+.container-fluid .multicolumn .home-card {
+    border: 0;
+}
+
+.multicolumn .home-card span {
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.multicolumn .home-card:hover
+{
+    background: whitesmoke;
+}
+
+.multicolumn .home-card i
+{
+    font-size: 17pt;
+}
+
+.multicolumn .home-card .home-card-content
+{
+    
+}
