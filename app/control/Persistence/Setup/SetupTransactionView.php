@@ -22,7 +22,7 @@ class SetupTransactionView extends TPage
         ini_set('highlight.html',    $config['highlight']['html']);
         ini_set('highlight.keyword', $config['highlight']['keyword']);
         ini_set('highlight.string',  $config['highlight']['string']);
-        
+        echo "felipe";
         // scroll to put the source inside
         $wrapper = new TElement('div');
         $wrapper->class = 'sourcecodewrapper';
