@@ -32,6 +32,7 @@ class CustomerDataGridView extends TPage
         $this->addFilterField('name', 'like', 'name'); // add a filter field
         $this->addFilterField('address', 'like', 'address'); // add a filter field
         $this->addFilterField('gender', '=', 'gender'); // add a filter field
+        $this->
         $this->addFilterField('(SELECT name from city WHERE id=customer.city_id)', 'like', 'city_name'); // add a filter field
         $this->setOrderCommand('city->name', '(select name from city where city_id = id)');
         

@@ -44,6 +44,8 @@ class FormCheckListView extends TPage
         $hbox->add( new TLabel('Order list') );
         $hbox->add( $input_search )->style = 'float:right;width:30%;';
         
+               
+        
         // load order items
         $orderlist->addItems( Product::allInTransaction('samples') );
         $this->form->addContent( [$hbox] );
@@ -69,7 +71,7 @@ class FormCheckListView extends TPage
         $data = $this->form->getData(); // optional parameter: active record class
         
         echo '<pre>';
-        var_dump($data);
+        //Product::allInTransaction('samples')
         echo '</pre>';
         
         // put the data back to the form

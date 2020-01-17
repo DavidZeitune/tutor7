@@ -67,6 +67,8 @@ class FormDBAutoSelectionView extends TPage
         $unique->setMask('({id}) <b>{name}</b> - {state->name}');
         $search->setOperator('like');
         
+        $search->placeholder = 'teste';
+        
         // default data:
         $radio->setValue(2);
         $radio2->setValue(2);

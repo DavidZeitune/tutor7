@@ -31,6 +31,7 @@ class DocumentationView extends TWindow
         $wrapper = new TElement('div');
         $wrapper->class = 'sourcecodewrapper';
         
+                
         $this->source = new TSourceCode;
         $this->source->generateRowNumbers();
         $wrapper->add($this->source);
