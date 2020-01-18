@@ -12,6 +12,8 @@ if (!empty(TSession::getValue('theme')))
     $theme = TSession::getValue('theme');
 }
 
+
+
 $menu_string = AdiantiMenuBuilder::parse('menu-slim.xml', $theme);
 
 $content  = file_get_contents("app/templates/{$theme}/layout.html");
