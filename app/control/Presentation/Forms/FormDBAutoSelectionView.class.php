@@ -38,6 +38,11 @@ class FormDBAutoSelectionView extends TPage
         $unique   = new TDBUniqueSearch('unique', 'samples', 'City', 'id', 'name');
         $autocomp = new TDBEntry('autocomplete', 'samples', 'Category', 'name');
         
+        $combo->setChangeAction(new TAction([$this,'onChange']));
+        
+        
+        $combo2->setId('mycombo');
+        
         $button = TButton::create('new', ['CityWindow', 'onClear'], '', 'fa:plus-circle green');
         $button->class = 'btn btn-default inline-button';
         $button->title = _t('New');
@@ -104,6 +109,12 @@ class FormDBAutoSelectionView extends TPage
         $vbox->add($this->form);
 
         parent::add($vbox);
+    }
+    
+    public static function onChange($param){
+    
+    TScript::create("$('#mycombo').select2('open')");
+    
     }
     
     /**

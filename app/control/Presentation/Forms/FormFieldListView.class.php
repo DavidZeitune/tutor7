@@ -57,7 +57,7 @@ class FormFieldListView extends TPage
         $this->form->addField($number);
         $this->form->addField($date);
         
-        $this->fieldlist->addButtonFunction("__adianti_message('Row data', JSON.stringify(tfieldlist_get_row_data(this)))", 'fa:info-circle blue', 'Show "Text" field');
+        $this->fieldlist->addButtonFunction("__adianti_post_data('my_form','class=FormFieldListView&method=onSave&key=' + tfieldlist_get_row(this))", 'fa:info-circle blue', 'Show "Text" field');
         
         $this->fieldlist->addHeader();
         $this->fieldlist->addDetail( new stdClass );
@@ -90,8 +90,8 @@ class FormFieldListView extends TPage
      */
     public static function onClear($param)
     {
-        TFieldList::clear('my_field_list');
-        TFieldList::addRows('my_field_list', 4);
+        TFieldList::clearRows('my_field_list');
+        //TFieldList::addRows('my_field_list', 4);
     }
     
     /**
@@ -117,7 +117,7 @@ class FormFieldListView extends TPage
     public static function onClearFill($param)
     {
     
-        TFieldList::clear('my_field_list');
+        TFieldList::clearRows('my_field_list');
         TFieldList::addRows('my_field_list', 4);
         
         $data = new stdClass;
@@ -130,7 +130,7 @@ class FormFieldListView extends TPage
                           date('Y-m-d', strtotime("+3 days")),
                           date('Y-m-d', strtotime("+4 days")) ];
         
-        TForm::sendData('my_form', $data, false, true, 200); // 200 ms of timeout after recreate rows!
+        TForm::sendData('my_form', $data, false, true, 2000); // 200 ms of timeout after recreate rows!
     }
     
     /**

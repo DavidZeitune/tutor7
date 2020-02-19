@@ -3,7 +3,7 @@
  * AgendaEntryList Listing
  * @author  <your name here>
  */
-class AgendaEntryList2 extends TPage
+class AgendaEntryList2 extends TWindow
 {
     protected $form;     // registration form
     protected $datagrid; // listing

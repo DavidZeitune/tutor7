@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query>
+    <tables>
+        <table id="0">
+            <name>city</name>
+            <x>65</x>
+            <y>20</y>
+            <fields>
+                <field1>
+                    <selected></selected>
+                    <table>city</table>
+                    <field>id</field>
+                    <alias>id</alias>
+                </field1>
+                <field2>
+                    <selected></selected>
+                    <table>city</table>
+                    <field>name</field>
+                    <alias>name</alias>
+                </field2>
+                <field3>
+                    <selected></selected>
+                    <table>city</table>
+                    <field>state_id</field>
+                    <alias>state_id</alias>
+                </field3>
+            </fields>
+            <joins>
+                <join1>
+                    <fk_field>state_id</fk_field>
+                    <pk_table>state</pk_table>
+                    <pk_field>id</pk_field>
+                </join1>
+            </joins>
+        </table>
+        <table id="1">
+            <name>state</name>
+            <x>290</x>
+            <y>85</y>
+            <fields>
+                <field1>
+                    <selected></selected>
+                    <table>state</table>
+                    <field>id</field>
+                    <alias>id</alias>
+                </field1>
+                <field2>
+                    <selected></selected>
+                    <table>state</table>
+                    <field>name</field>
+                    <alias>name</alias>
+                </field2>
+            </fields>
+        </table>
+    </tables>
+    <constraints/>
+    <ordering/>
+</query>

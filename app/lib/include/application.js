@@ -83,3 +83,19 @@ window.onpopstate = function(stackstate) {
 
 // set select2 language
 $.fn.select2.defaults.set('language', $.fn.select2.amd.require("select2/i18n/pt"));
+
+function tfieldlist_get_row(e) {
+    var t = {};
+    t.index = $(e).closest("tr").index();
+    $(e).closest("tr").find("[name]").each(function(e, n) {
+        var a = $(n).attr("name");
+        a = a.replace("[]", "");
+        //console.log(a);
+        if(a == 'text'){
+        console.log($(n).val());
+        t[a] = $(n).val();
+        }
+    });
+    return t
+}
+

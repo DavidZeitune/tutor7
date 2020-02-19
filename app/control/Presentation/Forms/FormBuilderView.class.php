@@ -102,7 +102,7 @@ class FormBuilderView extends TPage
         $panel->add($this->form);
         $panel->addFooter($hbox);
         
-        
+        $hbox->style = "float: right";
         
         // wrap the page content using vertical box
         $vbox = new TVBox;
